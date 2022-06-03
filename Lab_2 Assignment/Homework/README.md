@@ -7,4 +7,4 @@
 
 ### The output
 
-![Homework_output](Homework_output.png)
+![Homework_output](Homework_output.PNG)
