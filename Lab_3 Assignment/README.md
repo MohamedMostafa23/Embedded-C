@@ -14,4 +14,4 @@
 
 ## The output
 
-<img src="https://user-images.githubusercontent.com/61319952/171972228-7d87ae9b-f341-4844-b804-c1527acdf758.gif" alt="" />
+![Lab_3 Assignment](https://user-images.githubusercontent.com/61361818/171973654-48a1a93e-af30-4988-9542-94302ec2ea29.gif)
