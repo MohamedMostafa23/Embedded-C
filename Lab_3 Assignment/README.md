@@ -14,4 +14,4 @@
 
 ## The output
 
-![Lab_3 Assignment](Lab_3 Assignment.gif)
+<img src="https://user-images.githubusercontent.com/61319952/171972228-7d87ae9b-f341-4844-b804-c1527acdf758.gif" alt="" />
