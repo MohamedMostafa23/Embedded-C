@@ -9,12 +9,12 @@
 
 int main(void)
 {
-	struct ADCConfigType* par = (struct ADCConfigType*) malloc(sizeof(struct ADCConfigType));
+	struct ADCConfigType par;
 
 	Ended_Conversion = 1;
 
 	ADC1_Config();
-	ADC_Init(par);
+	ADC_Init(&par);
 
 	delayInit();
 	lcd_init();
@@ -26,22 +26,22 @@ int main(void)
 
 	while(1)
 	{
-		if (USE_POLLING){
-			  notValid = ADC_ReadData(&dataPtr);
-		}
+			if (USE_POLLING){
+				  notValid = ADC_ReadData(&dataPtr);
+			}
 
-		  if(!notValid){
-			   snprintf(displayText,7,"%d",dataPtr);
-			   lcd_gotoxy(0, 7);
-			   lcd_dispString(displayText);
-			   lcd_displayChar(0xDF);
-			   lcd_dispString("C   ");
-			   notValid = 1;
-		  }
+			  if(!notValid){
+				   snprintf(displayText,7,"%d",dataPtr);
+				   lcd_gotoxy(0, 7);
+				   lcd_dispString(displayText);
+				   lcd_displayChar(0xDF);
+				   lcd_dispString("C   ");
+				   notValid = 1;
+			  }
 
-		  if(!(ADC1->CR2 & ADC_CR2_CONT)){
-			  ADC1->CR2 |= ADC_CR2_SWSTART;
-		  }
+			  if(!(ADC1->CR2 & ADC_CR2_CONT)){
+				  ADC1->CR2 |= ADC_CR2_SWSTART;
+			  }
     }
 }
 

@@ -52,6 +52,13 @@ void ADC_Init(struct ADCConfigType* ConfigParamPtr)
 	/* Set Mode (Continues Or Single) */
 	ADC1->CR2 |= ConfigParamPtr->Mode;
 
+	/*Set Mode to Single if interrupt is turned on*/
+
+	if((ConfigParamPtr->Mode)&&(!(USE_POLLING))){
+		ADC1 ->CR2 &= ~(0x2);
+
+	}
+
 	/* Set Vref */
 	Vref = ConfigParamPtr->Vref;
 }
